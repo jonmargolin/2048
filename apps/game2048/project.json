@@ -1,0 +1,61 @@
+{
+  "name": "game2048",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/game2048/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/game2048",
+        "main": "apps/game2048/src/main.ts",
+        "tsConfig": "apps/game2048/tsconfig.app.json",
+        "assets": [
+          "apps/game2048/src/assets"
+        ],
+        "webpackConfig": "apps/game2048/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "game2048:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "game2048:build:development"
+        },
+        "production": {
+          "buildTarget": "game2048:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/game2048/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
