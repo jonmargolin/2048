@@ -2,7 +2,7 @@
   "name": "game2048-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "implicitDependencies": [
-    "game2048"
+    "gameService"
   ],
   "projectType": "application",
   "targets": {
@@ -12,7 +12,7 @@
         "{workspaceRoot}/coverage/{e2eProjectRoot}"
       ],
       "options": {
-        "jestConfig": "apps/game2048-e2e/jest.config.ts",
+        "jestConfig": "apps/gameService-e2e/jest.config.ts",
         "passWithNoTests": true
       }
     },

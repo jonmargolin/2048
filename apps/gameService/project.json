@@ -1,7 +1,7 @@
 {
-  "name": "game2048",
+  "name": "gameService",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/game2048/src",
+  "sourceRoot": "apps/gameService/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -13,13 +13,13 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/game2048",
-        "main": "apps/game2048/src/main.ts",
-        "tsConfig": "apps/game2048/tsconfig.app.json",
+        "outputPath": "dist/apps/gameService",
+        "main": "apps/gameService/src/main.ts",
+        "tsConfig": "apps/gameService/tsconfig.app.json",
         "assets": [
-          "apps/game2048/src/assets"
+          "apps/gameService/src/assets"
         ],
-        "webpackConfig": "apps/game2048/webpack.config.js"
+        "webpackConfig": "apps/gameService/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -30,14 +30,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "game2048:build"
+        "buildTarget": "gameService:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "game2048:build:development"
+          "buildTarget": "gameService:build:development"
         },
         "production": {
-          "buildTarget": "game2048:build:production"
+          "buildTarget": "gameService:build:production"
         }
       }
     },
@@ -53,7 +53,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "apps/game2048/jest.config.ts"
+        "jestConfig": "apps/gameService/jest.config.ts"
       }
     }
   },
